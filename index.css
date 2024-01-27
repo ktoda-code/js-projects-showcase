@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    height: 100%;
+    font-weight: 400;
+    color: black;
+    background: white;
+}
+
+/* LAYOUT */
+header {
+    height: 10vh;
+    position: relative;
+}
+
+.btn {
+    top: 20%;
+}
+
+main {
+    height: 90vh;
+    position: relative;
+}
+
+.background--lines {
+    position: absolute;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+svg {
+    position: absolute;
+}
+
+#line--1 {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+}
+
+#line--2 {
+    top: 0;
+    left: 0;
+    transform: translate(1091px, -91px);
+}
+
+#line--3 {
+    top: 0;
+    left: 0;
+    transform: translate(0, 500px);
+}
+
+#line--4 {
+    top: 0;
+    left: 0;
+    transform: translate(500px, 0);
+}
+
+#line--5 {
+    top: 0;
+    left: 0;
+    transform: translate(1550px, 10px);
+}
+
+#line--6 {
+    top: 0;
+    left: 0;
+    transform: translate(900px, 550px);
+}
+
+/* ELEMENT STYLE */
+a {
+    position: absolute;
+    left: 2%;
+    top: 20%;
+    font-size: 3em;
+    /*cursor: pointer;*/
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden;
+}
+
+a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.3s ease-in-out;
+    /*margin-top: 5px;*/
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+.path-point {
+    /*cursor: pointer;*/
+    pointer-events: visiblePainted;
+    transition: r 0.3s ease; /* Smooth transition for the radius */
+}
+
+.cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.cursor.grow {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    mix-blend-mode: difference;
+}
+
+.svg-text {
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.svg-text.hidden {
+    display: none;
+}
